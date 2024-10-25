@@ -1,4 +1,4 @@
-package com.example.demo; // Asegúrate de que el paquete sea correcto
+package com.example.demo2;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;

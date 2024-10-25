@@ -1,0 +1,4 @@
+{
+    "jwtSecret": "tu_clave_secreta_base256" /* si la encuentras te ganas un premio */
+  }
+  

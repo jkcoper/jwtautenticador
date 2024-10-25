@@ -1,0 +1,87 @@
+version: '3.8'
+
+services:
+  my-jwt-app:
+    build:
+      context: ./my-jwt-app
+      dockerfile: Dockerfile
+    container_name: my-jwt-app
+    ports:
+      - "3000:3000"
+    networks:
+      - frontend
+      - backend
+    environment:
+      NODE_ENV: production
+
+  nombre-del-proyecto:
+    build:
+      context: ./nombre-del-proyecto
+      dockerfile: Dockerfile
+    container_name: nombre-del-proyecto
+    ports:
+      - "3030:3030"
+    networks:
+      - frontend
+      - backend
+    environment:
+      NODE_ENV: production
+
+  demo:
+    build:
+      context: ./demo
+      dockerfile: Dockerfile
+    container_name: demo-backend
+    ports:
+      - "8081:8081"
+    networks:
+      - backend
+    depends_on:
+      - key
+    volumes:
+      - ./docker_data/user.json:/app/user.json
+
+  demo2:
+    build:
+      context: ./demo2
+      dockerfile: Dockerfile
+    container_name: demo2-backend
+    ports:
+      - "8090:8090"
+    networks:
+      - backend
+    depends_on:
+      - key
+    volumes:
+      - ./docker_data/productos.json:/app/productos.json
+
+  key:
+    build:
+      context: ./key
+      dockerfile: Dockerfile
+    container_name: config-server
+    ports:
+      - "8080:8080"
+    networks:
+      - backend
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - my-jwt-app
+      - nombre-del-proyecto
+    networks:
+      - frontend
+      - backend
+
+networks:
+  frontend:
+    driver: bridge
+  backend:
+    driver: bridge
+

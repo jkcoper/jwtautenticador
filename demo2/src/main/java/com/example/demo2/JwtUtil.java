@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo2;
 
 import io.jsonwebtoken.Claims;
 /* import io.jsonwebtoken.JwtBuilder; */
@@ -11,9 +11,11 @@ import java.security.Key;
 import java.util.Map; */
 import java.util.Date;
 
+import org.springframework.stereotype.Component;
+
 
 /* import javax.crypto.SecretKey; */
-
+@Component
 public class JwtUtil {
     /* private static final SecretKey secretKey = Keys.secretKeyFor(SignatureAlgorithm.HS256); */
 

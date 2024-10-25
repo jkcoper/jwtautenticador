@@ -1,0 +1,15 @@
+{
+    "products": [
+      {
+        "id_producto": "67HJ87",
+        "nombre": "Producto A",
+        "id_user": "FRT56YH"
+      },
+      {
+        "id_producto": "98JK89",
+        "nombre": "Producto B",
+        "id_user": "87FGG55"
+      }
+    ]
+  }
+  

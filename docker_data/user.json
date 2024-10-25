@@ -1,0 +1,15 @@
+{
+    "users": [
+      {
+        "id_user": "FRT56YH",
+        "username": "admin",
+        "password": "admin123"
+      },
+      {
+        "id_user":"87FGG55",
+        "username": "user",
+        "password": "user123"
+      }
+    ]
+  }
+  
